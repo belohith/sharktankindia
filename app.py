@@ -61,6 +61,7 @@ if season == 'Season 2':
     #st.text('This is my website!')
     st.markdown(
         """
+        <br/>
         <p align="center">Details regarding the pitches of all the companies on Shark Tank India season 2.</p>
         <p align="center">This is not associated with the official Shark Tank India by Sony TV. It is an independent project with data collected from Wikipedia and Sony/Shark Tank India websites.</p>
         <br/>
@@ -68,13 +69,31 @@ if season == 'Season 2':
         <a href="https://www.belohith.com" style="text-decoration: none">made by Lohith Bollineni</a>
         </p> 
         <br/>
-        <p align="center">You can resize the table by dragging the small square on the bottom right of the window.</p>
+        <h3 align="center">Table with all the pitches from Season 2</h3>
+        <p>You can resize the table by dragging the small square on the bottom right of the window.</p>
+        <p>View the table fullscreen by clicking the button on top right.</p>
         """,
         unsafe_allow_html=True,
     )
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    # plt.bar(np.arange(len(df_season2)), df_season2["Original Ask Amount in INR"], label="Company/Brand Name")
+    # Create a bar chart
+    # plt.title("Original Amount Asked in INR")
+    # plt.xlabel("Companies/Brands")
+    # plt.ylabel("Amount in INR")
+    # # Show the chart
+    # st.pyplot()
 
     st.dataframe(df_season2)
 
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">List of all the Pitches and their Social Media</h3>
+        <p>If a company/brand does not have a social media page, on any platform, then clicking on that platform will redirect you to thier website. (For ex., "Girgit Store" does not have a Twitter page. Clicking on "Twitter" on their card will redirect you to their website.))</p>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Iterate through each row of the dataframe
     for index, row in df_season2.iterrows():
@@ -114,10 +133,12 @@ elif season == 'Season 1':
     sts1 = "stis1.jpg"
     st.image(sts1, width=720)
 
+
     # Add some text
     #st.text('This is my website!')
     st.markdown(
         """
+        <br/>
         <p align="center">Details regarding the pitches of all the companies on Shark Tank India season 1.</p>
         <p align="center">This is not associated with the official Shark Tank India by Sony TV. It is an independent project with data collected from Wikipedia and Sony/Shark Tank India websites.</p>
         <br/>
@@ -125,16 +146,26 @@ elif season == 'Season 1':
         <a href="https://www.belohith.com" style="text-decoration: none">made by Lohith Bollineni</a>
         </p> 
         <br/>
-        <p align="center">You can resize the table by dragging the small square on the bottom right of the window.</p>
+        <h3 align="center">Table with all the pitches from Season 2</h3>
+        <p>You can resize the table by dragging the small square on the bottom right of the window.</p>
+        <p>View the table fullscreen by clicking the button on top right.</p>
         """,
         unsafe_allow_html=True,
     )
 
     st.dataframe(df_season1)
 
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">List of all the Pitches and their Social Media</h3>
+        <p>If a company/brand does not have a social media page, on any platform, then clicking on that platform will redirect you to thier website. (For ex., "Girgit Store" does not have a Twitter page. Clicking on "Twitter" on their card will redirect you to their website.))</p>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Iterate through each row of the dataframe
-    for index, row in df_season1.iterrows():
+    for index, row in df_season2.iterrows():
         st.markdown(
             f"""
             <div style="display: grid; grid-template-columns: repeat(3, 1fr)">
@@ -145,6 +176,12 @@ elif season == 'Season 1':
                 <p class="card-text" style=" font-size: 14px;">Original Ask: {row['Original Ask']}</p>
                 <p class="card-text" style=" font-size: 14px;">Entrepreneurs/ Founders: {row['Entrepreneurs/Founders']}</p>
                 <p class="card-text" style=" font-size: 14px;">Final Deal: {row['Final Deal']}</p>
+                <p class="card-text" style=" font-size: 14px;">Sharks on Board: {row['Sharks on Board']}</p>
+                <a target="_blank" style="text-decoration: none" href="{row['Website (Company)']}">Website - </a>
+                <a target="_blank" style="text-decoration: none" href="{row['Facebook (Company)']}">Facebook - </a>
+                <a target="_blank" style="text-decoration: none" href="{row['Instagram (Company)']}">Instagram - </a>
+                <a target="_blank" style="text-decoration: none" href="{row['Twitter (Company)']}">Twitter - </a>
+                <a target="_blank" style="text-decoration: none" href="{row['Youtube (Company)']}">Youtube</a>
             </div>
             </div>
             </div>
