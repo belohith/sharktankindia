@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import openpyxl
 
 # Load the Excel file into a Pandas DataFrame
 #df = pd.read_excel("excelData1.xlsx")
