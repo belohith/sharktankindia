@@ -146,7 +146,7 @@ elif season == 'Season 1':
         <a href="https://www.belohith.com" style="text-decoration: none">made by Lohith Bollineni</a>
         </p> 
         <br/>
-        <h3 align="center">Table with all the pitches from Season 2</h3>
+        <h3 align="center">Table with all the pitches from Season 1</h3>
         <p>You can resize the table by dragging the small square on the bottom right of the window.</p>
         <p>View the table fullscreen by clicking the button on top right.</p>
         """,
@@ -165,7 +165,7 @@ elif season == 'Season 1':
     )
 
     # Iterate through each row of the dataframe
-    for index, row in df_season2.iterrows():
+    for index, row in df_season1.iterrows():
         st.markdown(
             f"""
             <div style="display: grid; grid-template-columns: repeat(3, 1fr)">
