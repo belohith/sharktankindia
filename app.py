@@ -1,11 +1,15 @@
 import streamlit as st
 import pandas as pd
 import openpyxl
+import plotly.express as px
+from PIL import Image
+
 
 # Load the Excel file into a Pandas DataFrame
 #df = pd.read_excel("excelData1.xlsx")
 #df["Company/Brand Name"] = df["Company/Brand Name"].astype(object)
 
+st.set_page_config(page_title='Shark Tank India Brands & Pitches')
 
 # Load the Excel file for season 1 into a Pandas DataFrame
 df_season1 = pd.read_excel("excelData1.xlsx")
@@ -72,6 +76,7 @@ if season == 'Season 2':
         <h3 align="center">Table with all the pitches from Season 2</h3>
         <p>You can resize the table by dragging the small square on the bottom right of the window.</p>
         <p>View the table fullscreen by clicking the button on top right.</p>
+        <p>Click on the header of any column for ascending or descending order of items.</p>
         """,
         unsafe_allow_html=True,
     )
@@ -85,6 +90,28 @@ if season == 'Season 2':
     # st.pyplot()
 
     st.dataframe(df_season2)
+
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Let's look at some stats!! Who doesn't love charts?</h3>
+        <p>Click (toggle) on one sector (legend) to dismiss it in the chart. <br/> Double-click on one one sector (legend) to isolate it.</p>
+        <p>Scroll down further for complete list of the pitch details and social media/wesbite of companies.</p>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    pie_sector = px.pie(data_frame=df_season2, title='Number of Sectors', values='No. of Sectors', names='Sectors') 
+    st.write(pie_sector)
+    pie_deal = px.pie(data_frame=df_season2, title='Number of Deals', values='No. of Deals', names='Deals that happened') 
+    st.write(pie_deal)
+    bar_nf = px.bar(data_frame=df_season2,  x='Founders per Company', y='No. of Founders per Company', text='Founders per Company', color_discrete_sequence = ['#F63366']) 
+    bar_ns = px.bar(data_frame=df_season2,  x='Sharks on Board per Deal', y='No. of Sharks on Board per Deal', text='Sharks on Board per Deal', color_discrete_sequence = ['#FFEB3B'])
+    st.write(bar_nf)
+    st.write(bar_ns) 
+    
+  
+
 
     st.markdown(
         """
