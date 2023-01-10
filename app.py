@@ -107,8 +107,25 @@ if season == 'Season 2':
     st.write(pie_deal)
     bar_nf = px.bar(data_frame=df_season2,  x='Founders per Company', y='No. of Founders per Company', text='Founders per Company', color_discrete_sequence = ['#F63366']) 
     bar_ns = px.bar(data_frame=df_season2,  x='Sharks on Board per Deal', y='No. of Sharks on Board per Deal', text='Sharks on Board per Deal', color_discrete_sequence = ['#FFEB3B'])
+    bar_sd = px.bar(data_frame=df_season2,  x='Sharks', y='No. of deals made by a Shark', text='No. of deals made by a Shark', color_discrete_sequence = ['#228B22'])
+    bar_fr = px.bar(data_frame=df_season2,  x='Founders Relationship', y='Number of FR', text='Founders Relationship', color_discrete_sequence = ['#32CD32'])
+    bar_oav = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Original Ask Valuation in INR Crores', text='Original Ask Valuation in INR Crores', color_discrete_sequence = ['#663399'])
+    bar_fdv = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Final Deal Valuation in INR Crores', text='Final Deal Valuation in INR Crores', color_discrete_sequence = ['#9932CC'])
+    bar_oaa = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Original Ask Amount in INR Lakhs', text='Original Ask Amount in INR Lakhs', color_discrete_sequence = ['#FF4500'])
+    bar_fda = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Final Deal Amount in INR Lakhs', text='Final Deal Amount in INR Lakhs', color_discrete_sequence = ['#FF6347'])
+    bar_oae = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Original Ask Equity in %', text='Original Ask Equity in %', color_discrete_sequence = ['#87CEEB'])
+    bar_fde = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Final Deal Equity in %', text='Final Deal Equity in %', color_discrete_sequence = ['#00BFFF'])
     st.write(bar_nf)
-    st.write(bar_ns) 
+    st.write(bar_ns)
+    st.write(bar_sd)
+    st.write(bar_fr)
+    st.write(bar_oav)
+    st.write(bar_fdv)
+    st.write(bar_oaa)
+    st.write(bar_fda)
+    st.write(bar_oae)
+    st.write(bar_fde)
+     
     
   
 
