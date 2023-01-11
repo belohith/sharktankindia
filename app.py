@@ -73,7 +73,9 @@ if season == 'Season 2':
         <a href="https://www.belohith.com" style="text-decoration: none">made by Lohith Bollineni</a>
         </p> 
         <br/>
-        <h3 align="center">Table with all the pitches from Season 2</h3>
+        <h3 align="center">We always need a table right? Here's one</h3>
+        <p>This table has details of all the pitches from the Season 2. Literally every detail. You can download the hseet on the GitHub repo.</p><br/>
+        <p>Some Features: </p>
         <p>You can resize the table by dragging the small square on the bottom right of the window.</p>
         <p>View the table fullscreen by clicking the button on top right.</p>
         <p>Click on the header of any column for ascending or descending order of items.</p>
@@ -96,7 +98,7 @@ if season == 'Season 2':
         <br/>
         <h3 align="center">Let's look at some stats!! Who doesn't love charts?</h3>
         <p>Click (toggle) on one sector (legend) to dismiss it in the chart. <br/> Double-click on one one sector (legend) to isolate it.</p>
-        <p>Scroll down further for complete list of the pitch details and social media/wesbite of companies.</p>
+        <p>Scroll down further for complete list of the brand/company details and their social media/website.</p>
         """,
         unsafe_allow_html=True,
     )
@@ -115,15 +117,86 @@ if season == 'Season 2':
     bar_fda = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Final Deal Amount in INR Lakhs', text='Final Deal Amount in INR Lakhs', color_discrete_sequence = ['#FF6347'])
     bar_oae = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Original Ask Equity in %', text='Original Ask Equity in %', color_discrete_sequence = ['#87CEEB'])
     bar_fde = px.bar(data_frame=df_season2,  x='Company/Brand Name', y='Final Deal Equity in %', text='Final Deal Equity in %', color_discrete_sequence = ['#00BFFF'])
+    
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Number of Co - Founders in each Company</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_nf)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Number of Sharks on board in each Deal made</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_ns)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Number of deals made by each Shark</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_sd)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Number of Co - Founders who have the same relationship</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_fr)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Valuation asked originally by each company (in INR Crores)</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_oav)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Valuation after the final deal for each company (in INR Crores)</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_fdv)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Amount of Money asked originally by each company (in INR Lakhs)</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_oaa)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Amount of Money offered for each company (in INR Lakhs)</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_fda)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Amount of Equity offered originally by each company (in %)</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_oae)
+    st.markdown(
+        """
+        <br/>
+        <h3 align="center">Amount of Equity given after the deal by each company (in %)</h3>
+        """,
+        unsafe_allow_html=True,
+    )
     st.write(bar_fde)
      
     
