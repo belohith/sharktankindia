@@ -23,8 +23,8 @@ data_s1 = df_season1.to_json(orient='records')
 data_s2 = df_season2.to_json(orient='records')
 
 #print the json object
-print(data_s1)
-print(data_s2)
+# print(data_s1)
+# print(data_s2)
 
 with open('data_s1.json', 'w') as f:
     json.dump(data_s1, f)
