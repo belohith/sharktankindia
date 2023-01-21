@@ -18,16 +18,23 @@ df_season1 = pd.read_excel("excelData1.xlsx")
 # Load the Excel file for season 2 into a Pandas DataFrame
 df_season2 = pd.read_excel("excelData2.xlsx")
 
+# Specify the columns you want to keep
+columns_1_s2 = ['#', 'Company/Brand Name', 'Product', 'Original Ask', 'Original Ask Amount in INR', 'Original Ask Equity in %', 'Final Deal', 'Final Deal Investment in INR', 'Final Deal Equity in %', 'Final Deal Debt in INR', 'Final Deal Debt Interest in %', 'Deal/No Deal', 'Namita', 'Anupam', 'Vineeta', 'Aman', 'Peyush', 'Amit', 'No. of Sharks on Board', 'No. of Entrepreneurs/Founders ', 'Founders Relation', 'Entrepreneur 1', 'Entrepreneur 2', 'Entrepreneur 3', 'Entrepreneur 4', 'Entrepreneur 5', 'Entrepreneur 6', 'Sector', 'Twitter (Company)', 'LinkedIn (Company)', 'Instagram (Company)', 'Facebook (Company)', 'Youtube (Company)', 'Website (Company)', 'Sharks on Board', 'Entrepreneurs/Founders', 'Original Ask Valuation in INR Crores', 'Final Deal Valuation in INR Crores', 'Original Ask Amount in INR Lakhs', 'Final Deal Amount in INR Lakhs']
+
+# Create a new DataFrame with only the specified columns
+# df_s1 = df_season1[columns_json]
+df_s2 = df_season2[columns_1_s2]
+
 # convert the dataframe to a JSON object
-data_s1 = df_season1.to_json(orient='records')
-data_s2 = df_season2.to_json(orient='records')
+# data_s1 = df_s1.to_json(orient='records')
+data_s2 = df_s2.to_json(orient='records')
 
 #print the json object
 # print(data_s1)
 # print(data_s2)
 
-with open('data_s1.json', 'w') as f:
-    json.dump(data_s1, f)
+# with open('data_s1.json', 'w') as f:
+#     json.dump(data_s1, f)
 
 
 with open('data_s2.json', 'w') as f:
