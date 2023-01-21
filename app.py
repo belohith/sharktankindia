@@ -3,6 +3,7 @@ import pandas as pd
 import openpyxl
 import plotly.express as px
 from PIL import Image
+import json
 
 
 # Load the Excel file into a Pandas DataFrame
@@ -16,6 +17,21 @@ df_season1 = pd.read_excel("excelData1.xlsx")
 
 # Load the Excel file for season 2 into a Pandas DataFrame
 df_season2 = pd.read_excel("excelData2.xlsx")
+
+# convert the dataframe to a JSON object
+data_s1 = df_season1.to_json(orient='records')
+data_s2 = df_season2.to_json(orient='records')
+
+#print the json object
+print(data_s1)
+print(data_s2)
+
+with open('data_s1.json', 'w') as f:
+    json.dump(data_s1, f)
+
+
+with open('data_s2.json', 'w') as f:
+    json.dump(data_s2, f)
 
 #"Company/Brand Name", "Product",	"Original Ask",	"Original Ask Amount in INR",	"Original Ask Equity in %",	"Final Deal",	"Final Deal Investment in INR",	"Final Deal Debt in INR",	"Final Deal Equity in %",	"Deal/No Deal",	"Anupam",	"Ashneer",	"Namita",	"Aman",	"Peyush",	"Vineeta",	"Ghazal",	"No. of Sharks on Board",	"No. of Entrepreneurs/Founders", 	"Company/Brand Name",	"Entrepreneur 1",	"Entrepreneur 2",	"Entrepreneur 3",	"Entrepreneur 4",	"Entrepreneur 5",	"Entrepreneur 6",	"Sector",	"Twitter (Company)",	"LinkedIn (Company)",	"Instagram (Company)",	"Facebook (Company)",	"Youtube (Company)",	"Website (Company)"
 
