@@ -21,14 +21,56 @@ df_season2 = pd.read_excel("excelData2.xlsx")
 # Specify the columns you want to keep
 columns_1_s1 = ['#', 'Company/Brand Name', 'Product', 'Original Ask', 'Original Ask Amount in INR', 'Original Ask Equity in %', 'Final Deal', 'Final Deal Investment in INR', 'Final Deal Equity in %', 'Final Deal Debt in INR', 'Final Deal Debt Interest in %', 'Deal/No Deal', 'Namita', 'Anupam', 'Vineeta', 'Aman', 'Peyush', 'Ashneer', 'Ghazal', 'No. of Sharks on Board', 'No. of Entrepreneurs/Founders ', 'Founders Relation', 'Entrepreneur 1', 'Entrepreneur 2', 'Entrepreneur 3', 'Entrepreneur 4', 'Entrepreneur 5', 'Entrepreneur 6', 'Sector', 'Twitter (Company)', 'LinkedIn (Company)', 'Instagram (Company)', 'Facebook (Company)', 'Youtube (Company)', 'Website (Company)', 'Sharks on Board', 'Entrepreneurs/Founders', 'Original Ask Valuation in INR Crores', 'Final Deal Valuation in INR Crores', 'Original Ask Amount in INR Lakhs', 'Final Deal Amount in INR Lakhs']
 columns_1_s2 = ['#', 'Company/Brand Name', 'Product', 'Original Ask', 'Original Ask Amount in INR', 'Original Ask Equity in %', 'Final Deal', 'Final Deal Investment in INR', 'Final Deal Equity in %', 'Final Deal Debt in INR', 'Final Deal Debt Interest in %', 'Deal/No Deal', 'Namita', 'Anupam', 'Vineeta', 'Aman', 'Peyush', 'Amit', 'No. of Sharks on Board', 'No. of Entrepreneurs/Founders ', 'Founders Relation', 'Entrepreneur 1', 'Entrepreneur 2', 'Entrepreneur 3', 'Entrepreneur 4', 'Entrepreneur 5', 'Entrepreneur 6', 'Sector', 'Twitter (Company)', 'LinkedIn (Company)', 'Instagram (Company)', 'Facebook (Company)', 'Youtube (Company)', 'Website (Company)', 'Sharks on Board', 'Entrepreneurs/Founders', 'Original Ask Valuation in INR Crores', 'Final Deal Valuation in INR Crores', 'Original Ask Amount in INR Lakhs', 'Final Deal Amount in INR Lakhs']
+columns_sector = ['Sectors', 'No. of Sectors']
+columns_deal = ['Deals that happened', 'No. of Deals']
+columns_founders = ['Founders per Company', 'No. of Founders per Company']
+columns_sharkspd = ['Sharks on Board per Deal', 'No. of Sharks on Board per Deal']
+columns_sharks = ['Sharks', 'No. of deals made by a Shark']
+columns_fr = ['Founders Relationship', 'Number of FR']
 
 # Create a new DataFrame with only the specified columns
 df_s1 = df_season1[columns_1_s1]
 df_s2 = df_season2[columns_1_s2]
+df_s1_sectors = df_season1[columns_sector]
+df_s1_sectors = df_s1_sectors.iloc[:14]
+df_s2_sectors = df_season2[columns_sector]
+df_s2_sectors = df_s2_sectors.iloc[:14]
+df_s1_deals = df_season1[columns_deal]
+df_s1_deals = df_s1_deals.iloc[:2]
+df_s2_deals = df_season2[columns_deal]
+df_s2_deals = df_s2_deals.iloc[:2]
+df_s1_founders = df_season1[columns_founders]
+df_s1_founders = df_s1_founders.iloc[:6]
+df_s2_founders = df_season2[columns_founders]
+df_s2_founders = df_s2_founders.iloc[:6]
+df_s1_sharkspd = df_season1[columns_sharkspd]
+df_s1_sharkspd = df_s1_sharkspd.iloc[:7]
+df_s2_sharkspd = df_season2[columns_sharkspd]
+df_s2_sharkspd = df_s2_sharkspd.iloc[:7]
+df_s1_sharks = df_season1[columns_sharks]
+df_s1_sharks = df_s1_sharks.iloc[:6]
+df_s2_sharks = df_season2[columns_sharks]
+df_s2_sharks = df_s2_sharks.iloc[:6]
+df_s1_fr = df_season1[columns_fr]
+df_s1_fr = df_s1_fr.iloc[:5]
+df_s2_fr = df_season2[columns_fr]
+df_s2_fr = df_s2_fr.iloc[:5]
 
 # convert the dataframe to a JSON object
 data_s1 = df_s1.to_json(orient='records')
 data_s2 = df_s2.to_json(orient='records')
+data_s1_sectors = df_s1_sectors.to_json(orient='records')
+data_s2_sectors = df_s2_sectors.to_json(orient='records')
+data_s1_deals = df_s1_deals.to_json(orient='records')
+data_s2_deals = df_s2_deals.to_json(orient='records')
+data_s1_founders = df_s1_founders.to_json(orient='records')
+data_s2_founders = df_s2_founders.to_json(orient='records')
+data_s1_sharkspd = df_s1_sharkspd.to_json(orient='records')
+data_s2_sharkspd = df_s2_sharkspd.to_json(orient='records')
+data_s1_sharks = df_s1_sharks.to_json(orient='records')
+data_s2_sharks = df_s2_sharks.to_json(orient='records')
+data_s1_fr = df_s1_fr.to_json(orient='records')
+data_s2_fr = df_s2_fr.to_json(orient='records')
 
 #print the json object
 # print(data_s1)
@@ -37,9 +79,45 @@ data_s2 = df_s2.to_json(orient='records')
 with open('data_s1.json', 'w') as f:
     json.dump(data_s1, f)
 
-
 with open('data_s2.json', 'w') as f:
     json.dump(data_s2, f)
+
+with open('data_s1_sectors.json', 'w') as f:
+    json.dump(data_s1_sectors, f)
+
+with open('data_s2_sectors.json', 'w') as f:
+    json.dump(data_s2_sectors, f)
+
+with open('data_s1_deals.json', 'w') as f:
+    json.dump(data_s1_deals, f)
+
+with open('data_s2_deals.json', 'w') as f:
+    json.dump(data_s2_deals, f)
+
+with open('data_s1_founders.json', 'w') as f:
+    json.dump(data_s1_founders, f)
+
+with open('data_s2_founders.json', 'w') as f:
+    json.dump(data_s2_founders, f)
+
+with open('data_s1_sharkspd.json', 'w') as f:
+    json.dump(data_s1_sharkspd, f)
+
+with open('data_s2_sharkspd.json', 'w') as f:
+    json.dump(data_s2_sharkspd, f)
+
+with open('data_s1_sharks.json', 'w') as f:
+    json.dump(data_s1_sharks, f)
+
+with open('data_s2_sharks.json', 'w') as f:
+    json.dump(data_s2_sharks, f)
+
+with open('data_s1_fr.json', 'w') as f:
+    json.dump(data_s1_fr, f)
+
+with open('data_s2_fr.json', 'w') as f:
+    json.dump(data_s2_fr, f)
+
 
 #"Company/Brand Name", "Product",	"Original Ask",	"Original Ask Amount in INR",	"Original Ask Equity in %",	"Final Deal",	"Final Deal Investment in INR",	"Final Deal Debt in INR",	"Final Deal Equity in %",	"Deal/No Deal",	"Anupam",	"Ashneer",	"Namita",	"Aman",	"Peyush",	"Vineeta",	"Ghazal",	"No. of Sharks on Board",	"No. of Entrepreneurs/Founders", 	"Company/Brand Name",	"Entrepreneur 1",	"Entrepreneur 2",	"Entrepreneur 3",	"Entrepreneur 4",	"Entrepreneur 5",	"Entrepreneur 6",	"Sector",	"Twitter (Company)",	"LinkedIn (Company)",	"Instagram (Company)",	"Facebook (Company)",	"Youtube (Company)",	"Website (Company)"
 
