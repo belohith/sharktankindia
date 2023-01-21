@@ -1,1 +1,58 @@
-"[{\"Sectors\":\"Food and Beverages\",\"No. of Sectors\":10.0},{\"Sectors\":\"Beauty and Wellness\",\"No. of Sectors\":3.0},{\"Sectors\":\"Electronics\",\"No. of Sectors\":5.0},{\"Sectors\":\"Automobile\",\"No. of Sectors\":1.0},{\"Sectors\":\"Other\",\"No. of Sectors\":2.0},{\"Sectors\":\"Apparel\",\"No. of Sectors\":9.0},{\"Sectors\":\"Leisure\",\"No. of Sectors\":1.0},{\"Sectors\":\"Civic and Social Organizations\",\"No. of Sectors\":2.0},{\"Sectors\":\"Information Technology\",\"No. of Sectors\":1.0},{\"Sectors\":\"Health\",\"No. of Sectors\":3.0},{\"Sectors\":\"Home Furnishing\",\"No. of Sectors\":2.0},{\"Sectors\":\"Finance\",\"No. of Sectors\":1.0},{\"Sectors\":\"Sports and Fitness\",\"No. of Sectors\":2.0},{\"Sectors\":\"Entertainment\",\"No. of Sectors\":1.0}]"
+[
+  {
+    "Sectors": "Food and Beverages",
+    "No. of Sectors": 10
+  },
+  {
+    "Sectors": "Beauty and Wellness",
+    "No. of Sectors": 3
+  },
+  {
+    "Sectors": "Electronics",
+    "No. of Sectors": 5
+  },
+  {
+    "Sectors": "Automobile",
+    "No. of Sectors": 1
+  },
+  {
+    "Sectors": "Other",
+    "No. of Sectors": 2
+  },
+  {
+    "Sectors": "Apparel",
+    "No. of Sectors": 9
+  },
+  {
+    "Sectors": "Leisure",
+    "No. of Sectors": 1
+  },
+  {
+    "Sectors": "Civic and Social Organizations",
+    "No. of Sectors": 2
+  },
+  {
+    "Sectors": "Information Technology",
+    "No. of Sectors": 1
+  },
+  {
+    "Sectors": "Health",
+    "No. of Sectors": 3
+  },
+  {
+    "Sectors": "Home Furnishing",
+    "No. of Sectors": 2
+  },
+  {
+    "Sectors": "Finance",
+    "No. of Sectors": 1
+  },
+  {
+    "Sectors": "Sports and Fitness",
+    "No. of Sectors": 2
+  },
+  {
+    "Sectors": "Entertainment",
+    "No. of Sectors": 1
+  }
+]
